@@ -1,0 +1,96 @@
+==================================================
+Experiment: PGD Adversarial Training + AutoAttack
+Model: SmallCNN
+Dataset: CIFAR-10
+Threat Model: Linf (ε = 8/255)
+Training Method: PGD Adversarial Training
+Evaluation: AutoAttack (Standard Version)
+Device: CPU
+==================================================
+
+[Raw AutoAttack Output]
+
+Using device: cpu
+Epoch 1/5 - loss: 2.0879, clean acc: 0.4105
+Epoch 2/5 - loss: 1.9491, clean acc: 0.4477
+Epoch 3/5 - loss: 1.9069, clean acc: 0.4686
+Epoch 4/5 - loss: 1.8812, clean acc: 0.4753
+Epoch 5/5 - loss: 1.8634, clean acc: 0.4893
+Saved PGD-trained model to results/smallcnn_pgd.pth
+setting parameters for standard version
+using standard version including apgd-ce, apgd-t, fab-t, square.
+initial accuracy: 48.93%
+apgd-ce - 1/20 - 110 out of 250 successfully perturbed
+apgd-ce - 2/20 - 89 out of 250 successfully perturbed
+apgd-ce - 3/20 - 95 out of 250 successfully perturbed
+apgd-ce - 4/20 - 86 out of 250 successfully perturbed
+apgd-ce - 5/20 - 92 out of 250 successfully perturbed
+apgd-ce - 6/20 - 110 out of 250 successfully perturbed
+apgd-ce - 7/20 - 98 out of 250 successfully perturbed
+apgd-ce - 8/20 - 104 out of 250 successfully perturbed
+apgd-ce - 9/20 - 101 out of 250 successfully perturbed
+apgd-ce - 10/20 - 81 out of 250 successfully perturbed
+apgd-ce - 11/20 - 114 out of 250 successfully perturbed
+apgd-ce - 12/20 - 96 out of 250 successfully perturbed
+apgd-ce - 13/20 - 100 out of 250 successfully perturbed
+apgd-ce - 14/20 - 96 out of 250 successfully perturbed
+apgd-ce - 15/20 - 94 out of 250 successfully perturbed
+apgd-ce - 16/20 - 92 out of 250 successfully perturbed
+apgd-ce - 17/20 - 105 out of 250 successfully perturbed
+apgd-ce - 18/20 - 84 out of 250 successfully perturbed
+apgd-ce - 19/20 - 95 out of 250 successfully perturbed
+apgd-ce - 20/20 - 68 out of 143 successfully perturbed
+robust accuracy after APGD-CE: 29.83% (total time 129.4 s)
+apgd-t - 1/12 - 31 out of 250 successfully perturbed
+apgd-t - 2/12 - 38 out of 250 successfully perturbed
+apgd-t - 3/12 - 28 out of 250 successfully perturbed
+apgd-t - 4/12 - 24 out of 250 successfully perturbed
+apgd-t - 5/12 - 32 out of 250 successfully perturbed
+apgd-t - 6/12 - 26 out of 250 successfully perturbed
+apgd-t - 7/12 - 32 out of 250 successfully perturbed
+apgd-t - 8/12 - 25 out of 250 successfully perturbed
+apgd-t - 9/12 - 30 out of 250 successfully perturbed
+apgd-t - 10/12 - 34 out of 250 successfully perturbed
+apgd-t - 11/12 - 40 out of 250 successfully perturbed
+apgd-t - 12/12 - 43 out of 233 successfully perturbed
+robust accuracy after APGD-T: 26.00% (total time 703.7 s)
+fab-t - 1/11 - 0 out of 250 successfully perturbed
+fab-t - 2/11 - 0 out of 250 successfully perturbed
+fab-t - 3/11 - 0 out of 250 successfully perturbed
+fab-t - 4/11 - 0 out of 250 successfully perturbed
+fab-t - 5/11 - 0 out of 250 successfully perturbed
+fab-t - 6/11 - 0 out of 250 successfully perturbed
+fab-t - 7/11 - 0 out of 250 successfully perturbed
+fab-t - 8/11 - 0 out of 250 successfully perturbed
+fab-t - 9/11 - 0 out of 250 successfully perturbed
+fab-t - 10/11 - 0 out of 250 successfully perturbed
+fab-t - 11/11 - 0 out of 100 successfully perturbed
+robust accuracy after FAB-T: 26.00% (total time 1771.1 s)
+square - 1/11 - 0 out of 250 successfully perturbed
+square - 2/11 - 0 out of 250 successfully perturbed
+square - 3/11 - 0 out of 250 successfully perturbed
+square - 4/11 - 0 out of 250 successfully perturbed
+square - 5/11 - 0 out of 250 successfully perturbed
+square - 6/11 - 0 out of 250 successfully perturbed
+square - 7/11 - 0 out of 250 successfully perturbed
+square - 8/11 - 0 out of 250 successfully perturbed
+square - 9/11 - 0 out of 250 successfully perturbed
+square - 10/11 - 0 out of 250 successfully perturbed
+square - 11/11 - 0 out of 100 successfully perturbed
+robust accuracy after SQUARE: 26.00% (total time 3072.8 s)
+max Linf perturbation: 0.03137, nan in tensor: 0, max: 1.00000, min: 0.00000
+robust accuracy: 26.00%
+AutoAttack robust accuracy: 0.25999999046325684
+
+
+--------------------------------------------------
+[Explanation / Notes]
+
+1. The model is trained using PGD adversarial training with Linf constraint (ε = 8/255).
+2. Clean accuracy after adversarial training is approximately 48.9%, which is expected due to the robustness–accuracy trade-off.
+3. APGD-CE and APGD-T are able to successfully find adversarial examples, reducing accuracy to ~26%.
+4. FAB-T and Square attacks do not further reduce the robust accuracy, indicating that APGD-based attacks are the dominant ones in this setting.
+5. The final robust accuracy under AutoAttack is 26.0%, which represents the certified empirical robustness of this model under the Linf threat model.
+
+==================================================
+

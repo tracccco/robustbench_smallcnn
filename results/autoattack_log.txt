@@ -1,0 +1,55 @@
+Epoch 1, clean acc = 0.5607
+Epoch 2, clean acc = 0.6380
+Epoch 3, clean acc = 0.6730
+Epoch 4, clean acc = 0.6845
+Epoch 5, clean acc = 0.7104
+setting parameters for standard version
+using standard version including apgd-ce, apgd-t, fab-t, square.
+initial accuracy: 71.04%
+apgd-ce - 1/29 - 250 out of 250 successfully perturbed
+apgd-ce - 2/29 - 250 out of 250 successfully perturbed
+apgd-ce - 3/29 - 250 out of 250 successfully perturbed
+apgd-ce - 4/29 - 250 out of 250 successfully perturbed
+apgd-ce - 5/29 - 250 out of 250 successfully perturbed
+apgd-ce - 6/29 - 250 out of 250 successfully perturbed
+apgd-ce - 7/29 - 250 out of 250 successfully perturbed
+apgd-ce - 8/29 - 250 out of 250 successfully perturbed
+apgd-ce - 9/29 - 250 out of 250 successfully perturbed
+apgd-ce - 10/29 - 250 out of 250 successfully perturbed
+apgd-ce - 11/29 - 249 out of 250 successfully perturbed
+apgd-ce - 12/29 - 250 out of 250 successfully perturbed
+apgd-ce - 13/29 - 250 out of 250 successfully perturbed
+apgd-ce - 14/29 - 250 out of 250 successfully perturbed
+apgd-ce - 15/29 - 250 out of 250 successfully perturbed
+apgd-ce - 16/29 - 250 out of 250 successfully perturbed
+apgd-ce - 17/29 - 249 out of 250 successfully perturbed
+apgd-ce - 18/29 - 250 out of 250 successfully perturbed
+apgd-ce - 19/29 - 250 out of 250 successfully perturbed
+apgd-ce - 20/29 - 250 out of 250 successfully perturbed
+apgd-ce - 21/29 - 249 out of 250 successfully perturbed
+apgd-ce - 22/29 - 250 out of 250 successfully perturbed
+apgd-ce - 23/29 - 250 out of 250 successfully perturbed
+apgd-ce - 24/29 - 250 out of 250 successfully perturbed
+apgd-ce - 25/29 - 250 out of 250 successfully perturbed
+apgd-ce - 26/29 - 250 out of 250 successfully perturbed
+apgd-ce - 27/29 - 250 out of 250 successfully perturbed
+apgd-ce - 28/29 - 250 out of 250 successfully perturbed
+apgd-ce - 29/29 - 104 out of 104 successfully perturbed
+robust accuracy after APGD-CE: 0.03% (total time 188.8 s)
+apgd-t - 1/1 - 1 out of 3 successfully perturbed
+robust accuracy after APGD-T: 0.02% (total time 190.7 s)
+fab-t - 1/1 - 0 out of 2 successfully perturbed
+robust accuracy after FAB-T: 0.02% (total time 197.1 s)
+square - 1/1 - 0 out of 2 successfully perturbed
+robust accuracy after SQUARE: 0.02% (total time 214.9 s)
+max Linf perturbation: 0.03137, nan in tensor: 0, max: 1.00000, min: 0.00000
+robust accuracy: 0.02%
+AutoAttack robust accuracy: 0.00019999999494757503
+
+----------------------Explanation---------------------
+Model: SmallCNN
+Training: Standard (clean)
+Dataset: CIFAR-10
+Attack: AutoAttack (L∞, ε=8/255)
+Clean acc: ~71%
+Robust acc: ~0.02%
