@@ -1,6 +1,6 @@
 # RobustBench-style Evaluation of SmallCNN on CIFAR-10
 
-This repository implements a **RobustBench-style adversarial robustness evaluation pipeline** for a lightweight convolutional neural network (SmallCNN) on CIFAR-10.
+This repository implements a **RobustBench-style adversarial robustness evaluation pipeline** for a lightweight convolutional neural network (SmallCNN) on CIFAR-10. The goal is to study how standardized robustness benchmarks behave on lightweight architectures under strong, attack-agnostic evaluation.
 
 The project focuses on **reliable robustness evaluation under strong, standardized attacks** and demonstrates the impact of **PGD adversarial training** when assessed using **AutoAttack**.
 
@@ -25,15 +25,16 @@ robustbench_smallcnn/
 ├── eval/
 │   ├── eval_clean.py       # Clean accuracy evaluation
 │   ├── eval_fgsm.py        # FGSM robustness evaluation
-│   └── eval_autoattack.py  # ⭐ RobustBench-style AutoAttack evaluation
+│   └── eval_autoattack.py  # RobustBench-style AutoAttack evaluation
 │
 ├── scripts/
 │   └── run_all.py           # One-command pipeline
 │
 ├── results/
-│   ├── smallcnn_clean.pth   # Standard-trained model
-│   ├── smallcnn_pgd.pth     # PGD-trained model
-│   └── autoattack_*.txt     # Experiment logs
+│   ├── smallcnn_clean.pth       # Standard-trained model
+│   ├── smallcnn_pgd.pth         # PGD-trained model
+|   ├── smallcnn_pgd_steps5.pth  # PGD-trained model with 5 steps
+│   └── autoattack_*.txt         # Experiment logs
 │
 ├── requirements.txt
 └── README.md
@@ -99,6 +100,8 @@ All reported robust accuracies correspond to the **worst-case accuracy returned 
 | Standard        | ~71%           | ~0.02%                     |
 | PGD Training    | ~49%           | ~26%                       |
 
+These results demonstrate that even lightweight architectures can exhibit non-trivial robustness gains under standardized evaluation when trained with adversarial objectives.
+
 ### Ablation Note
 
 We additionally compared PGD adversarial training with 5 vs 10 iterations.
@@ -135,6 +138,7 @@ and alternative defense strategies.
 ## References
 
 * Croce, F., & Hein, M. (2020). *Reliable evaluation of adversarial robustness with AutoAttack*. NeurIPS.
+*(Evaluation protocol and implementation closely follow the official AutoAttack and RobustBench recommendations.)*
 * RobustBench: [https://robustbench.github.io/](https://robustbench.github.io/)
 
 ---
