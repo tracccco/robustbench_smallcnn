@@ -1,4 +1,3 @@
-<<<<<<<< HEAD
 # RobustBench-style Evaluation of SmallCNN on CIFAR-10
 
 This repository implements a **RobustBench-style adversarial robustness evaluation pipeline** for a lightweight convolutional neural network (SmallCNN) on CIFAR-10.
@@ -144,4 +143,3 @@ and alternative defense strategies.
 
 All experiments are fully reproducible using the provided scripts
 and a fixed evaluation protocol.
->>>>>>> 78a34cd (Initial commit: robustbench smallcnn with auto-attack submodule)
